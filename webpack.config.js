@@ -93,4 +93,17 @@ module.exports = [
     },
     optimization: { minimize: true },
   },
+  {
+    ...standard,
+    entry: `./src/invoker.ts`,
+    target: ["web"],
+    output: {
+      filename: "insitux-apps-script.js",
+      path: path.resolve(__dirname, "out"),
+      library: {
+        name: "insitux",
+        type: "assign-properties",
+      },
+    },
+  },
 ];
